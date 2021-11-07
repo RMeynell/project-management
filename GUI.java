@@ -1,28 +1,29 @@
 import ecs100.*;
 /**
- * Write a description of class GUI here.
+ * Class for establishing GUI
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Regan Meynell
+ * @version 1/11/21
  */
 public class GUI
 {
     // instance variables
-    private int currId = 0;
     private int highId = 0;
-    private int imgno = 0;
     private Games gm;
     private Game game;
+
     /**
      * Constructor for objects of class GUI
      */
     public GUI()
     {
         // setting up GUI and adding buttons to allow user to access different functions
-        Games gm = new Games();
+        gm = new Games();
         UI.initialise();
-        UI.addButton("Add a Game Result", gm::addGame);
+        UI.addButton("Add a game result", gm::addprevGame);
         UI.addButton("Add an upcoming game", gm::addnewGame);
+        // UI.setMouseListener(gm::doMouse);
         UI.addButton("Quit", UI::quit);
-}
+    }
+
 }
