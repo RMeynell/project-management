@@ -1,33 +1,37 @@
 import ecs100.*;
 /**
- * Class for creating tournaments
+ * Write a description of class Tournament here.
  *
- * @author (your name)
+ * @author Regan Meynell
  * @version (a version number or a date)
  */
 public class Tournament
 {
     // instance variables - replace the example below with your own
-    private int noteams;
+    private String teamname;
+    private int teamid = 0;
 
     /**
-     * Constructor for objects of class Tournament
+     * Constructor for tournament
      */
-    public Tournament()
-    {
-        // initialise instance variables
-        x = 0;
+    public void Tournament(int teamid, String teamname) {
+        this.teamid = teamid;
+        this.teamname = teamname;
     }
-
+    
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Getter for teamid
+     * @return teamid
      */
-    public void tournament()
-    {
-        UI.askInt("How many teams are in the tournament?: ");
-        
+    public int getteamid() {
+        return this.teamid;
+    }
+    
+    /**
+     * Getter for teamname
+     * @return teamname
+     */
+    public String getteamname() {
+        return this.teamname;
     }
 }

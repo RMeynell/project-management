@@ -11,12 +11,15 @@ public class Games
     // instance variables - replace the example below with your own
     private HashMap<Integer, Game> resultsMap;   // declaring the hashmap
     private HashMap<Integer, Game> newMap;   // declaring the hashmap
-    private int team1name;     // id of current pokemon
-    private int team2name;      // increase when img is added
+    private HashMap<Integer, Tournament> round1Map;   // declaring the hashmap
+    private int team1name;     
+    private int team2name;      
     private int team1score;
     private int team2score;
     private int resultsid = 0;
     private int newid = 0;
+    private String teamname;    // name of team, used in tournament method
+    private int teamid = 0;     // id of team, used for creating matches
     
     /**
     * Constructor for objects of class Games
@@ -26,6 +29,7 @@ public class Games
     {
         resultsMap = new HashMap<Integer, Game>();   // initialise hashmap
         newMap = new HashMap<Integer, Game>();   // initialise hashmap
+        round1Map = new HashMap<Integer, Tournament>();   // initialise hashmap
     }
 
     /**
@@ -65,5 +69,18 @@ public class Games
         UI.println(team1name + " vs " + team2name);
         UI.println("Date: " + date);
         UI.println("Location: " + location);
+    }
+    
+    /**
+     * Method for creating a tournament
+     */
+    public void tournament() {
+        do {
+            teamname = UI.askString("What is the teamname?: ");
+            teamid++;
+            // putting teamname and teamid into hashmap
+            round1Map.put(teamid, new Tournament(
+            teamid, teamname));;
+        } while (round1Map.size() < 8);
     }
 }
