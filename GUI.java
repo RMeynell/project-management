@@ -22,7 +22,7 @@ public class GUI
         UI.initialise();
         UI.addButton("Add a game result", gm::addprevGame);
         UI.addButton("Add an upcoming game", gm::addnewGame);
-        // UI.setMouseListener(gm::doMouse);
+        UI.addButton("Start a new tournament", gm::tournament);
         UI.addButton("Quit", UI::quit);
     }
 

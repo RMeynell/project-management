@@ -2,8 +2,8 @@
 comment0.target=Tournament
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Tournament\ here.\r\n\r\n\ @author\ Regan\ Meynell\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=teamid\ teamname
-comment1.target=void\ Tournament(int,\ java.lang.String)
-comment1.text=\r\n\ Constructor\ for\ tournament\r\n
+comment1.target=Tournament(int,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ to\ make\ pokemon\r\n\ @param\ id\ used\ to\ give\ pokemon\ a\ no\ to\ find\ them\r\n\ @param\ nm\ name\ of\ pokemon\r\n\ @param\ val\ value\ of\ the\ pokemon\r\n\ @param\ imgno\ no.\ of\ image,\ used\ to\ stop\ overlapping\r\n\ @param\ img\ image\ selected\ by\ user\r\n\ @param\ nm\r\n\ @param\ val\r\n
 comment2.params=
 comment2.target=int\ getteamid()
 comment2.text=\r\n\ Getter\ for\ teamid\r\n\ @return\ teamid\r\n

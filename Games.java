@@ -51,6 +51,12 @@ public class Games
         UI.println(team1name + " vs " + team2name + ": " + team1score + " - " + team2score);
     }
     
+    public void tournamentGame() {
+        
+        int team1score = UI.askInt("What is the score of team 1?: ");
+        int team2score = UI.askInt("What is the score of team 2?: ");
+    }
+    
     /**
      * Method for adding an upcoming game
      * @param id
@@ -76,11 +82,19 @@ public class Games
      */
     public void tournament() {
         do {
-            teamname = UI.askString("What is the teamname?: ");
+            teamname = UI.askString("What is the team name?: ");
             teamid++;
             // putting teamname and teamid into hashmap
-            round1Map.put(teamid, new Tournament(
-            teamid, teamname));;
+            round1Map.put(teamid, new Tournament(teamid, teamname));;
         } while (round1Map.size() < 8);
+        
+        UI.println(round1Map.values());
+        
     }
 }
+
+
+
+
+
+

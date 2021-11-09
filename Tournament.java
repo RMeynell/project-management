@@ -8,13 +8,20 @@ import ecs100.*;
 public class Tournament
 {
     // instance variables - replace the example below with your own
-    private String teamname;
     private int teamid = 0;
+    private String teamname;
 
     /**
-     * Constructor for tournament
+     * Constructor to make pokemon
+     * @param id used to give pokemon a no to find them
+     * @param nm name of pokemon
+     * @param val value of the pokemon
+     * @param imgno no. of image, used to stop overlapping
+     * @param img image selected by user
+     * @param nm
+     * @param val
      */
-    public void Tournament(int teamid, String teamname) {
+    public Tournament(int teamid, String teamname) {
         this.teamid = teamid;
         this.teamname = teamname;
     }
