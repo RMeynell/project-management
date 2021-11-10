@@ -12,16 +12,9 @@ public class Tournament
     private String teamname;
 
     /**
-     * Constructor to make pokemon
-     * @param id used to give pokemon a no to find them
-     * @param nm name of pokemon
-     * @param val value of the pokemon
-     * @param imgno no. of image, used to stop overlapping
-     * @param img image selected by user
-     * @param nm
-     * @param val
+     * Constructor to make tournaments
      */
-    public Tournament(int teamid, String teamname) {
+    public Tournament(String teamname) {
         this.teamid = teamid;
         this.teamname = teamname;
     }
