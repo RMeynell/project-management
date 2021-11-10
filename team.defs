@@ -1,9 +1,9 @@
-#Mon Nov 08 23:37:30 NZDT 2021
-bluej.teamsettings.git.protocol=https
-bluej.teamsettings.yourName=Regan Meynell
+#Mon Nov 08 09:53:15 NZDT 2021
 bluej.teamsettings.user=RMeynell
 bluej.teamsettings.groupname=
-bluej.teamsettings.yourEmail=regan.meynell@gmail.com
-bluej.teamsettings.vcs=git
+bluej.teamsettings.yourName=Regan Meynell
 bluej.teamsettings.git.server=github.com
-bluej.teamsettings.git.repositoryPrefix=/RMeynell/project-management.git
+bluej.teamsettings.yourEmail=regan.meynell@gmail.com
+bluej.teamsettings.git.repositoryPrefix=/RMeynell/project-management
+bluej.teamsettings.vcs=git
+bluej.teamsettings.git.protocol=https

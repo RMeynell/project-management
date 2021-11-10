@@ -1,4 +1,5 @@
 import ecs100.*;
+import java.awt.Color;
 /**
  * Class for establishing GUI
  *
@@ -8,9 +9,9 @@ import ecs100.*;
 public class GUI
 {
     // instance variables
-    private int highId = 0;
-    private Games gm;
-    private Game game;
+    public int highId = 0;
+    public Games gm;
+    public Game game;
 
     /**
      * Constructor for objects of class GUI
@@ -25,5 +26,4 @@ public class GUI
         UI.addButton("Start a new tournament", gm::tournament);
         UI.addButton("Quit", UI::quit);
     }
-
 }

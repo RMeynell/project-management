@@ -1,6 +1,7 @@
 import ecs100.*;
 import java.util.HashMap;
 import java.util.ArrayList;
+import java.awt.Color;
 /**
  * Class for storing results of games
  *
@@ -85,12 +86,37 @@ public class Games
      * Method for creating a tournament
      */
     public void tournament() {
+        // creating a bracket
+        int boxWidth = 100;
+        int boxHeight = 50;
+        int boxSpace = 50;
+        int scoreBox = 50;
+        int textOffset = 5;
+        
+        UI.setColor(Color.black);
+        UI.setLineWidth(3);
+        UI.setFontSize(24);
+        UI.drawRect(boxSpace, 2 * boxSpace, boxWidth, boxHeight);
+        UI.drawRect(boxSpace, 2 * boxSpace + boxHeight, boxWidth, boxHeight);
+        UI.drawRect(boxSpace + boxWidth, 2 * boxSpace, scoreBox, scoreBox);
+        UI.drawRect(boxSpace + boxWidth, 2 * boxSpace + boxHeight, scoreBox, scoreBox);
+        // 2nd bracket box
+        UI.drawRect(boxSpace, 3 * boxSpace + 2 * boxHeight, boxWidth, boxHeight);
+        UI.drawRect(boxSpace, 3 * boxSpace + 3 * boxHeight, boxWidth, boxHeight);
+        UI.drawRect(boxSpace + boxWidth, 3 * boxSpace + 2 * boxHeight, scoreBox, scoreBox);
+        UI.drawRect(boxSpace + boxWidth, 3 * boxSpace + 3 * boxHeight, scoreBox, scoreBox);
+        
         UI.println("Please enter teams in order of seeding");
         for (int i = 0; i < 8; i++) {
            teamname = UI.askString("What is the team name?: "); 
            teams.add(teamname);
+           if (i % 3 == 0) {
+               UI.drawString(teamname, boxSpace + textOffset, 2 * boxSpace - 2 * textOffset + (i + 1) * boxHeight);
+           } else {
+               UI.drawString(teamname, boxSpace + textOffset, 2 * boxSpace - 2 * textOffset + (i + 2) * boxHeight);
+           }
         }
-
+        
         // adding variables for team scores
         int score1a = 0; 
         int score1b = 0;
@@ -108,6 +134,7 @@ public class Games
         int score3b = 0;
         
         // first round of knockout
+        UI.println(teams.get(0) + " is playing " + teams.get(1));
         score1a = UI.askInt("What is the score for " + teams.get(0) + ": ");
         score1b = UI.askInt("What is the score for " + teams.get(1) + ": ");
         if (score1a > score1b) {
@@ -147,35 +174,35 @@ public class Games
         
         score1c = UI.askInt("What is the score for " + teams.get(2) + ": ");
         score1d = UI.askInt("What is the score for " + teams.get(3) + ": ");
-        if (score1c > score1b) {
+        if (score1c > score1d) {
             UI.println(teams.get(2) + " defeated " + teams.get(3));
-            UI.println("The score was: " + score1c + " - " + score1b);
+            UI.println("The score was: " + score1c + " - " + score1d);
             removeteams.add(teams.get(3));
             UI.println(teams.get(2) + " has advanced to the next round");
             UI.println(teams.get(3) + " was knocked out of the tournament");
         }
-        else if (score1b > score1c) {
+        else if (score1d > score1c) {
             UI.println(teams.get(3) + " defeated " + teams.get(2));
             UI.println("The score was: " + score1d + " - " + score1c);
             removeteams.add(teams.get(2));
             UI.println(teams.get(3) + " has advanced to the next round");
             UI.println(teams.get(2) + " was knocked out of the tournament");
         }
-        else if (score1b == score1c) {
+        else if (score1d == score1c) {
             UI.println("The match was tied");
             UI.println("The match will be decided in a shootout");
-            score1c = UI.askInt("What is the score for " + teams.get(0) + ": ");
-            score1b = UI.askInt("What is the score for " + teams.get(1) + ": ");
-            if (score1c > score1b) {
+            score1c = UI.askInt("What is the score for " + teams.get(2) + ": ");
+            score1d = UI.askInt("What is the score for " + teams.get(3) + ": ");
+            if (score1c > score1d) {
             UI.println(teams.get(2) + " defeated " + teams.get(3));
-            UI.println("The score was: " + score1c + " - " + score1b);
+            UI.println("The score was: " + score1c + " - " + score1d);
             removeteams.add(teams.get(2));
             UI.println(teams.get(2) + " has advanced to the next round");
             UI.println(teams.get(3) + " was knocked out of the tournament");
         }
-            else if (score1b > score1c) {
+            else if (score1d > score1c) {
             UI.println(teams.get(3) + " defeated " + teams.get(2));
-            UI.println("The score was: " + score1b + " - " + score1c);
+            UI.println("The score was: " + score1d + " - " + score1c);
             removeteams.add(teams.get(2));
             UI.println(teams.get(3) + " has advanced to the next round");
             UI.println(teams.get(2) + " was knocked out of the tournament");
@@ -382,4 +409,3 @@ public class Games
         }
     }  
 } 
-
